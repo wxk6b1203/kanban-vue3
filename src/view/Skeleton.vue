@@ -34,14 +34,17 @@ import { SettingOutlined } from "@ant-design/icons-vue";
   },
 })
 export default class Skeleton extends Vue {
-  spin : boolean = false;
-  onSettings : boolean = false;
-  w = watch(() => this.onSettings, (val : boolean, old : boolean)=>{
-    this.spin = true;
-    setTimeout(() => {
-      this.spin = false;
-    }, 400);
-  });
+  spin: boolean = false;
+  onSettings: boolean = false;
+  w = watch(
+    () => this.onSettings,
+    (val: boolean, old: boolean) => {
+      this.spin = true;
+      setTimeout(() => {
+        this.spin = false;
+      }, 400);
+    }
+  );
 }
 </script>
 
