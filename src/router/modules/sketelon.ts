@@ -3,7 +3,7 @@ let sketelon : RouteRecordRaw[] = [
     {
         name: 'main',
         path: '/',
-        component: () => import("../../view/Skeleton.vue")
+        component: () => import("@/view/Skeleton.vue")
     }
 ]
 
