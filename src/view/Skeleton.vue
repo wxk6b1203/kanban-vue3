@@ -15,6 +15,7 @@
           <a-col span="1">
             <setting-outlined
               :spin="spin"
+              @click="toggleSettings"
               style="font-size: 18px; float: right"
             />
           </a-col>
@@ -25,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { watch, Ref, ref, readonly } from "vue";
+// import { watch } from "vue";
 import { Options, Vue } from "vue-class-component";
 import { SettingOutlined } from "@ant-design/icons-vue";
 @Options({
@@ -36,15 +37,17 @@ import { SettingOutlined } from "@ant-design/icons-vue";
 export default class Skeleton extends Vue {
   spin: boolean = false;
   onSettings: boolean = false;
-  w = watch(
-    () => this.onSettings,
-    (val: boolean, old: boolean) => {
-      this.spin = true;
+
+  spining() {
+    this.spin = true;
       setTimeout(() => {
         this.spin = false;
       }, 400);
-    }
-  );
+  }
+
+  toggleSettings() {
+    this.spining();
+  }
 }
 </script>
 
