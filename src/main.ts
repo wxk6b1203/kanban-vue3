@@ -13,7 +13,6 @@ app.use(Col)
 app.use(Input)
 app.use(Button)
 app.use(BackTop)
-
 app.use(store)
 app.use(router)
 
