@@ -1,9 +1,8 @@
 <template>
-  <a-modal v-model:visible="modalShow"> </a-modal>
+  <a-modal v-model:visible="onShow"> </a-modal>
 </template>
 
 <script lang="ts">
-import { reactive, Ref, toRef } from "vue";
 import { Options, Vue } from "vue-class-component";
 @Options({
   props: {
@@ -12,9 +11,14 @@ import { Options, Vue } from "vue-class-component";
   emits: ["update:show"],
 })
 export default class Settings extends Vue {
-  show!: Boolean;
-  setup() {
-    let onShow = reactive({ show: false });
+  show!: boolean;
+
+  public get onShow(): boolean {
+    return this.show;
+  }
+
+  public set onShow(v: boolean) {
+    this.$emit("update:show", v);
   }
 }
 </script>
