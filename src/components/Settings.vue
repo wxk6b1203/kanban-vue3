@@ -24,9 +24,6 @@
 // }
 
 import { computed, defineComponent } from "vue";
-interface SettingsProps {
-  show: boolean;
-}
 
 export default defineComponent({
   name: "Settings",
