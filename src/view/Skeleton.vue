@@ -27,6 +27,7 @@
         <router-view name="content"></router-view>
       </a-layout-content>
     </a-layout>
+    <settings v-model:show="onSettings"></settings>
   </a-layout>
 </template>
 
@@ -34,15 +35,16 @@
 // import { watch } from "vue";
 import { Options, Vue } from "vue-class-component";
 import { SettingOutlined } from "@ant-design/icons-vue";
+import Settings from "@/components/Settings.vue";
 
 @Options({
   components: {
-    SettingOutlined,
+    SettingOutlined, Settings
   },
 })
 export default class Skeleton extends Vue {
   spin: boolean = false;
-  onSettings: boolean = false;
+  onSettings: boolean = true;
 
   spining() {
     this.spin = true;
@@ -53,6 +55,7 @@ export default class Skeleton extends Vue {
 
   toggleSettings() {
     this.spining();
+    this.onSettings = !this.onSettings;    
   }
 }
 </script>
