@@ -30,7 +30,7 @@ export default defineComponent({
   props: {
     show: {
       type: Boolean,
-      default: false,
+      default: false, // TODO: wait for v3 to fix the default boolean to false problem.
     },
   },
   setup(props, { emit }) {
