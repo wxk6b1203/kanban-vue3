@@ -3,24 +3,53 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-@Options({
-  props: {
-    show: Boolean,
-  },
-  emits: ["update:show"],
-})
-export default class Settings extends Vue {
-  show!: boolean;
+// import { Options, Vue } from "vue-class-component";
 
-  public get onShow(): boolean {
-    return this.show;
-  }
+// @Options({
+//   props: {
+//     show: Boolean,
+//   },
+//   emits: ["update:show"],
+// })
+// export default class Settings extends Vue {
+//   show!: boolean;
 
-  public set onShow(v: boolean) {
-    this.$emit("update:show", v);
-  }
+//   public get onShow(): boolean {
+//     return this.show;
+//   }
+
+//   public set onShow(v: boolean) {
+//     this.$emit("update:show", v);
+//   }
+// }
+
+import { computed, defineComponent } from "vue";
+interface SettingsProps {
+  show: boolean;
 }
+
+export default defineComponent({
+  name: "Settings",
+  props: {
+    show: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props, { emit }) {
+    const onShow = computed({
+      get: () => {
+        return props.show;
+      },
+      set: (val: boolean) => {
+        emit("update:show", val);
+      },
+    });
+    return {
+      onShow,
+    };
+  },
+});
 </script>
 
 <style>
