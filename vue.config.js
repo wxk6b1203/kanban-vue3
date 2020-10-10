@@ -11,6 +11,6 @@ module.exports = {
         }
     },
     configureWebpack: config => {
-        config.plugins.push(new BundleAnalyzerPlugin())
+        // config.plugins.push(new BundleAnalyzerPlugin())
     }
 }

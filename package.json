@@ -11,7 +11,7 @@
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
-  "main": "background.ts",
+  "main": "background.js",
   "dependencies": {
     "ant-design-vue": "^2.0.0-beta.10",
     "clipboard": "^2.0.6",
