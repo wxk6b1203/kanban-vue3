@@ -6,8 +6,14 @@
 
 <script lang="ts">
 import { Vue } from 'vue-class-component';
-
-export default class App extends Vue {}
+import {useI18n} from 'vue-i18n'
+export default class App extends Vue {
+  setup() {
+    return {
+      ...useI18n()
+    }
+  }
+}
 </script>
 
 <style>

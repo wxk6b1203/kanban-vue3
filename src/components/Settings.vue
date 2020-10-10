@@ -1,11 +1,11 @@
 <template>
-  <a-modal v-model:visible="onShow"> </a-modal>
+  <a-modal :title="t('settings')" :width="600" v-model:visible="onShow"> 
+  </a-modal>
 </template>
 
 <script lang="ts">
-
 import { computed, defineComponent } from "vue";
-
+import { useI18n } from "vue-i18n";
 export default defineComponent({
   name: "Settings",
   props: {
@@ -25,6 +25,7 @@ export default defineComponent({
     });
     return {
       onShow,
+      ...useI18n(),
     };
   },
 });

@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import  store from "@/store/store";
-import router from "@/router/router";
+import router from "@/router";
 import { Layout, Modal, Row, Col, Input, Button, BackTop } from "ant-design-vue";
+
+import i18n from '@/i18n'
 
 let app = createApp(App)
 
@@ -15,5 +17,6 @@ app.use(Button)
 app.use(BackTop)
 app.use(store)
 app.use(router)
+app.use(i18n)
 
 app.mount('#app')
