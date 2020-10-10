@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import settings from "./modules/settings";
 import sketelon from "./modules/sketelon"
 
@@ -8,7 +8,8 @@ routes = routes.concat(settings)
 routes = routes.concat(sketelon);
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
+    // history: createWebHistory(),
     routes: routes
 })
 
