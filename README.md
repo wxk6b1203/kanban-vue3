@@ -1,4 +1,7 @@
 # kanban-v3
+## Warning
+
+This repo is created just for bug explaination only.
 
 ## Project setup
 ```
